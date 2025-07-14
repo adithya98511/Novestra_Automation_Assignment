@@ -11,7 +11,7 @@ public class LoginPage extends BasePage {
     private By passwordField = By.xpath("//input[@name='password']");
     private By loginButton = By.xpath("//button[@type='submit']");
     private By errorMessage = By.xpath("//p[normalize-space()='Your email or password is incorrect!']");
-
+    private By signupTitle = By.xpath("div[class='signup-form'] h2");
     private By nameField = By.name("name");
     private By signupEmailField = By.xpath("//input[@data-qa='signup-email']");
     private By signupButton = By.xpath("//button[text()='Signup']");
@@ -45,5 +45,11 @@ public class LoginPage extends BasePage {
     }
 
     public void clickSignupButton() {
+        driver.findElement(signupButton).click();
+    }
+
+    public boolean isNewUserSignupVisible() {
+        WebElement signup = driver.findElement(signupTitle);
+        return signup.isDisplayed();
     }
 }
