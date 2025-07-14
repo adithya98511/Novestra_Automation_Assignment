@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/QA Automation/Novestra_Automation_Assignment">
+        <classes>
+            <class name="TestCases.TC_019">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+            <class name="TestCases.TC_020">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+            <class name="TestCases.TC_021">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+            <class name="TestCases.TC_022">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
