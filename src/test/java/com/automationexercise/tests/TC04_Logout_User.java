@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogoutUserTest {
+public class TC04_Logout_User {
 
     @Test
     public void logoutUser() {

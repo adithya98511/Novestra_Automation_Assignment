@@ -1,7 +1,6 @@
 package com.automationexercise.tests;
 
 import com.automationexercise.auth.Auth;
-import com.automationexercise.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -9,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class LoginInvalidTest {
+public class TC03_Login_with_Incorrect_Credentials {
 
     private WebDriver driver;
     private Auth auth;

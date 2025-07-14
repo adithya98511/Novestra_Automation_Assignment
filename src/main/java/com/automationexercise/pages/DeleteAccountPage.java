@@ -9,8 +9,8 @@ public class DeleteAccountPage extends BasePage {
         super(driver);
     }
 
-    private By accountDeletedMessage = By.xpath("//h2[text()='Account Deleted!']");
-    private By continueButton = By.xpath("//button[text()='Continue']");
+    private By accountDeletedMessage = By.xpath("(//b[normalize-space()='Account Deleted!'])[1]");
+    private By continueButton = By.xpath("(//a[normalize-space()='Continue'])[1]");
 
     // Verify the 'Account Deleted!' message is visible
     public boolean isAccountDeletedMessageVisible() {

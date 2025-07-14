@@ -10,8 +10,8 @@ public class LoginPage extends BasePage {
     private By loginEmailField = By.xpath("//input[@name='email']");
     private By passwordField = By.xpath("//input[@name='password']");
     private By loginButton = By.xpath("//button[@type='submit']");
-    private By errorMessage = By.xpath("//p[normalize-space()='Your email or password is incorrect!']");
-    private By signupTitle = By.xpath("div[class='signup-form'] h2");
+    private By errorMessage = By.xpath("(//p[normalize-space()='Email Address already exist!'])[1]");
+    private By signupTitle = By.xpath("//h2[normalize-space()='New User Signup!']");
     private By nameField = By.name("name");
     private By signupEmailField = By.xpath("//input[@data-qa='signup-email']");
     private By signupButton = By.xpath("//button[text()='Signup']");
@@ -41,7 +41,9 @@ public class LoginPage extends BasePage {
         return error.isDisplayed() ? error.getText() : null;
     }
 
-    public void fillSignupForm(String johnDoe, String uniqueEmail) {
+    public void fillSignupForm(String name, String email) {
+        driver.findElement(nameField).sendKeys(name);
+        driver.findElement(signupEmailField).sendKeys(email);
     }
 
     public void clickSignupButton() {
