@@ -12,6 +12,7 @@ public class HomePage extends BasePage {
 
     private By loginLink = By.xpath("//a[normalize-space()='Signup / Login']");
     private By loggedInAsText = By.xpath("//a[contains(text(), 'Logged in as')]//b[text()='capman']");
+    private By logoutButton = By.xpath("a[href='/Logout']");
 
     // Navigate to the login page
     public void navigateToLoginPage() {
@@ -39,6 +40,16 @@ public class HomePage extends BasePage {
         } catch (NoSuchElementException e) {
             return false; // Returns false if the element is not found
         }
+    }
+
+    // Click the logout button
+    public void logout() {
+        driver.findElement(logoutButton).click();
+    }
+
+    // Verify if the "Logout" button is visible
+    public boolean isLogoutButtonVisible() {
+        return driver.findElement(logoutButton).isDisplayed();
     }
 
 
