@@ -67,6 +67,6 @@ public class Auth {
         loginPage.clickLoginButton();
 
         // Return error message if login fails
-        return loginPage.getErrorMessage();
+        return loginPage.getInvalidLoginErrorMessage();
     }
 }

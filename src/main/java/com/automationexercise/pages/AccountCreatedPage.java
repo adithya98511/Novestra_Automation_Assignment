@@ -9,8 +9,8 @@ public class AccountCreatedPage extends BasePage {
         super(driver);
     }
 
-    private By accountCreatedMessage = By.xpath("//h2[text()='Account Created!']");
-    private By continueButton = By.xpath("//button[text()='Continue']");
+    private By accountCreatedMessage = By.xpath("(//b[normalize-space()='Account Created!'])[1]");
+    private By continueButton = By.xpath("(//a[normalize-space()='Continue'])[1]");
 
     // Verify the 'Account Created!' message is visible
     public boolean isAccountCreatedMessageVisible() {

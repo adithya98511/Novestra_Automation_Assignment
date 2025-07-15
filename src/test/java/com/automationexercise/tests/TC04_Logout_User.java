@@ -2,12 +2,13 @@ package com.automationexercise.tests;
 
 import com.automationexercise.auth.Auth;
 import com.automationexercise.pages.HomePage;
+import com.automationexercise.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogoutUserTest {
+public class TC04_Logout_User {
 
     @Test
     public void logoutUser() {
@@ -28,7 +29,8 @@ public class LogoutUserTest {
             homePage.logout();
 
             // 5. Verify that the user is logged out
-            Assert.assertTrue(homePage.isLogoutButtonVisible(), "Logout button is visible, user might not have been logged out");
+            LoginPage loginPage = new LoginPage(driver);
+            Assert.assertTrue(loginPage.isLoginTitleVisible(), "User was not navigated to the login page after logout.");
 
             // Alternatively, you can verify that a "Login" link appears after logout
             Assert.assertTrue(driver.getTitle().contains("Automation Exercise"), "Page title doesn't match after logout");

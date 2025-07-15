@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class LoginValidTest {
+public class TC02_Login_with_Correct_Credentials {
 
     private WebDriver driver;
     private Auth auth;
