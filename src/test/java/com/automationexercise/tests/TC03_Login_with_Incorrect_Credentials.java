@@ -22,6 +22,28 @@ public class TC03_Login_with_Incorrect_Credentials {
     }
 
     @Test
+    public void testLoginWithInvalidPassword() {
+        driver.get("https://www.automationexercise.com");
+
+        // Attempt login with invalid credentials
+        String errorMessage = auth.loginWithInvalidCredentials("johndoe@example.com", "wrongpassword");
+
+        // Assert the error message displayed
+        Assert.assertEquals(errorMessage, "Your email or password is incorrect!", "Error message not displayed as expected");
+    }
+
+    @Test
+    public void testLoginWithInvalidUsername() {
+        driver.get("https://www.automationexercise.com");
+
+        // Attempt login with invalid credentials
+        String errorMessage = auth.loginWithInvalidCredentials("wrong@example.com", "123abcABC");
+
+        // Assert the error message displayed
+        Assert.assertEquals(errorMessage, "Your email or password is incorrect!", "Error message not displayed as expected");
+    }
+
+    @Test
     public void testLoginWithInvalidCredentials() {
         driver.get("https://www.automationexercise.com");
 

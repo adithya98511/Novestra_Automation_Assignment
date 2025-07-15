@@ -10,8 +10,10 @@ public class LoginPage extends BasePage {
     private By loginEmailField = By.xpath("//input[@name='email']");
     private By passwordField = By.xpath("//input[@name='password']");
     private By loginButton = By.xpath("//button[@type='submit']");
-    private By errorMessage = By.xpath("(//p[normalize-space()='Email Address already exist!'])[1]");
+    private By emailExistsErrorMessage = By.xpath("(//p[normalize-space()='Email Address already exist!'])[1]");
+    private By invalidCredentialsErrorMessage = By.xpath("(//p[normalize-space()='Your email or password is incorrect!'])[1]");
     private By signupTitle = By.xpath("//h2[normalize-space()='New User Signup!']");
+    private By loginTitle = By.xpath("//h2[normalize-space()='Login to your account']");
     private By nameField = By.name("name");
     private By signupEmailField = By.xpath("//input[@data-qa='signup-email']");
     private By signupButton = By.xpath("//button[text()='Signup']");
@@ -36,8 +38,13 @@ public class LoginPage extends BasePage {
     }
 
     // Method to get the error message (if any)
-    public String getErrorMessage() {
-        WebElement error = driver.findElement(errorMessage);
+    public String getEmailExistsErrorMessage() {
+        WebElement error = driver.findElement(emailExistsErrorMessage);
+        return error.isDisplayed() ? error.getText() : null;
+    }
+
+    public String getInvalidLoginErrorMessage() {
+        WebElement error = driver.findElement(invalidCredentialsErrorMessage);
         return error.isDisplayed() ? error.getText() : null;
     }
 
@@ -53,5 +60,10 @@ public class LoginPage extends BasePage {
     public boolean isNewUserSignupVisible() {
         WebElement signup = driver.findElement(signupTitle);
         return signup.isDisplayed();
+    }
+
+    public boolean isLoginTitleVisible() {
+        WebElement login = driver.findElement(loginTitle);
+        return login.isDisplayed();
     }
 }

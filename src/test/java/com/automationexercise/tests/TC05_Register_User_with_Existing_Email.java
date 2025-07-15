@@ -34,7 +34,7 @@ public class TC05_Register_User_with_Existing_Email {
             loginPage.clickSignupButton();
 
             // 7. Verify error 'Email Address already exist!' is visible
-            String errorMessage = loginPage.getErrorMessage();
+            String errorMessage = loginPage.getEmailExistsErrorMessage();
             Assert.assertEquals(errorMessage, "Email Address already exist!", "Error message is not as expected");
 
         } finally {

@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
 
     private By loginLink = By.xpath("//a[normalize-space()='Signup / Login']");
     private By loggedInAsText = By.xpath("//a[contains(text(), 'Logged in as')]//b[text()='capman']");
-    private By logoutButton = By.xpath("a[href='/Logout']");
+    private By logoutButton = By.xpath("(//a[normalize-space()='Logout'])[1]");
 
     private By deleteAccountButton = By.xpath("(//a[normalize-space()='Delete Account'])[1]");
 
